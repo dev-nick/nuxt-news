@@ -1,47 +1,72 @@
 <template>
-  <div class="container">
-    <div>
-      <logo />
-      <h1 class="title">
-        nuxt-news
-      </h1>
-      <h2 class="subtitle">
-        Old Gnews
-      </h2>
-      <div class="links">
-        <a href="https://nuxtjs.org/" target="_blank" class="button--green">
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
-    </div>
+  <div class="maindiv">
+    <b-navbar toggleable="lg" type="dark" variant="dark">
+      <b-navbar-brand href="#">Nuxt-News</b-navbar-brand>
+      <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+      <b-collapse id="nav-collapse" is-nav>
+        <!-- Right aligned nav items -->
+        <b-navbar-nav class="ml-auto">
+          <b-nav-form>
+            <b-form-input
+              size="sm"
+              class="mr-sm-2"
+              placeholder="Search for news"
+            ></b-form-input>
+            <b-button size="sm" class="my-2 my-sm-0" type="submit"
+              >Search</b-button
+            >
+          </b-nav-form>
+          <b-nav-item-dropdown text="Lang" right>
+            <b-dropdown-item href="#">EN</b-dropdown-item>
+            <b-dropdown-item href="#">ES</b-dropdown-item>
+            <b-dropdown-item href="#">RU</b-dropdown-item>
+            <b-dropdown-item href="#">FA</b-dropdown-item>
+          </b-nav-item-dropdown>
+        </b-navbar-nav>
+      </b-collapse>
+    </b-navbar>
+
+    <b-container class="bodycontainer">
+      <b-row>
+        <b-col md="3"> <Controls /> </b-col>
+        <b-col md="9">
+          <div class="newscontainer">
+            <News />
+          </div>
+        </b-col>
+      </b-row>
+    </b-container>
   </div>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
+import News from '@/components/News'
+import Controls from '@/components/Controls'
 
 export default {
   components: {
-    Logo
+    News,
+    Controls
   }
 }
 </script>
 
-<style>
-.container {
-  margin: 0 auto;
+<style scoped>
+.newscontainer {
+  width: 100%;
+  min-width: 100%;
+}
+
+.bodycontainer {
+  margin: 80px auto;
+  min-width: 80vw;
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
+  background-color: #f2f2f2;
+  padding-top: 50px;
 }
 
 .title {
@@ -64,5 +89,9 @@ export default {
 
 .links {
   padding-top: 15px;
+}
+.maindiv {
+  background-color: #f6f6f6;
+  background-image: linear-gradient(315deg, #f6f6f6 0%, #e9e9e9 74%);
 }
 </style>
