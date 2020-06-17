@@ -1,6 +1,6 @@
 # nuxt-news
 
-> Old Gnews
+> A Google News clone
 
 ## Build Setup
 
