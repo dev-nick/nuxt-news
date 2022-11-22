@@ -19,7 +19,7 @@
     "got": "^11.3.0",
     "metascraper": "^5.12.6",
     "metascraper-image": "^5.11.21",
-    "nuxt": "^2.0.0",
+    "nuxt": "^2.15.8",
     "open-graph-scraper": "^4.1.1",
     "rss-parser": "^3.7.6"
   },
